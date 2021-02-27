@@ -1,0 +1,122 @@
+// Copyright (C) 2017-2020 Smart code 203358507
+
+@import (reference) '~@stremio/stremio-colors/less/stremio-colors.less';
+
+.video-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0.5rem 1rem;
+
+    &:hover, &:focus {
+        background-color: @color-background;
+    }
+
+    .thumbnail-container {
+        flex: none;
+
+        .thumbnail {
+            display: block;
+            width: 5rem;
+            height: 5rem;
+            object-fit: contain;
+            object-position: center;
+            opacity: 0.9;
+        }
+
+        .placeholder-icon {
+            display: block;
+            width: 5rem;
+            height: 5rem;
+            padding: 0.5rem;
+            fill: @color-secondaryvariant1-light3-90;
+        }
+    }
+
+    .info-container {
+        flex: 1;
+        align-self: stretch;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 0.5rem 1rem;
+
+        &:first-child {
+            height: 3rem;
+
+            .title-container {
+                max-height: 1.2em;
+            }
+        }
+
+        .title-container {
+            max-height: 2.4em;
+            color: @color-surface-light5-90;
+        }
+
+        .flex-row-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-end;
+
+            .released-container {
+                flex: 1;
+                margin-right: 0.5rem;
+                font-size: 0.8rem;
+                font-weight: 500;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                text-transform: uppercase;
+                color: @color-surface-dark5-90;
+            }
+
+            .upcoming-watched-container {
+                flex: 0 1 auto;
+                display: flex;
+                flex-direction: row;
+
+                &>:nth-child(2) {
+                    margin-left: 0.5rem;
+                }
+
+                .upcoming-container, .watched-container {
+                    flex: none;
+                    padding: 0.2rem 0.4rem;
+                    max-width: 10rem;
+
+                    &:not(:only-child) {
+                        max-width: 5rem;
+                    }
+
+                    .flag-label {
+                        font-size: 0.8rem;
+                        font-weight: 500;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        text-transform: uppercase;
+                        color: @color-background-90;
+                    }
+                }
+
+                .upcoming-container {
+                    background-color: @color-accent4;
+                }
+
+                .watched-container {
+                    background-color: @color-accent5;
+                }
+            }
+        }
+    }
+
+    .progress-bar-container {
+        flex: 0 0 100%;
+        background-color: @color-background-light2;
+
+        .progress-bar {
+            height: 0.5rem;
+            background-color: @color-primaryvariant1;
+        }
+    }
+}
